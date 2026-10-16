@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Flex-basis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        /* Chung cho các container */
+        .container {
+            display: flex;
+            gap: 10px;
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .item {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        /* --- Ví dụ 1: flex-basis với px --- */
+        .ex1 .item1 { background-color: lightblue; flex-basis: 200px; }
+        .ex1 .item2 { background-color: lightblue; flex-basis: 100px; }
+        .ex1 .item3 { background-color: lightblue; flex-basis: 150px; }
+
+        /* --- Ví dụ 2: flex-direction: column --- */
+        .ex2 {
+            flex-direction: column;
+            height: 400px;
+        }
+        .ex2 .item {
+            background-color: lightgreen;
+            flex-basis: 100px; /* Tác động theo chiều dọc */
+        }
+
+        /* --- Ví dụ 3: flex-basis với % --- */
+        .ex3 .item {
+            background-color: lightcoral;
+            flex-basis: 50%; /* Mỗi item chiếm khoảng 50% */
+        }
+
+        /* --- Ví dụ 4: Kết hợp flex-basis với flex-grow --- */
+        .ex4 {
+            width: 600px;
+        }
+        .ex4 .item1 { background-color: #ffeb3b; flex-basis: 100px; flex-grow: 1; }
+        .ex4 .item2 { background-color: #ffc107; flex-basis: 100px; flex-grow: 2; }
+        .ex4 .item3 { background-color: #ff9800; flex-basis: 100px; flex-grow: 1; }
+    </style>
+</head>
+<body>
+
+    <h1>Thực hành Thuộc tính Flex-basis</h1>
+
+    <h2>1. Ví dụ dùng flex-basis với đơn vị px</h2>
+    <div class="container ex1">
+        <div class="item item1">Item 1 (200px)</div>
+        <div class="item item2">Item 2 (100px)</div>
+        <div class="item item3">Item 3 (150px)</div>
+    </div>
+
+    <h2>2. Ví dụ flex-basis kết hợp flex-direction: column</h2>
+    <div class="container ex2">
+        <div class="item">Item 1 (100px dọc)</div>
+        <div class="item">Item 2 (100px dọc)</div>
+        <div class="item">Item 3 (100px dọc)</div>
+    </div>
+
+    <h2>3. Ví dụ flex-basis với phần trăm (%)</h2>
+    <div class="container ex3">
+        <div class="item">Item 1 (50%)</div>
+        <div class="item">Item 2 (50%)</div>
+    </div>
+
+    <h2>4. Ví dụ kết hợp flex-basis với flex-grow</h2>
+    <div class="container ex4">
+        <div class="item item1">Item 1 (grow: 1)</div>
+        <div class="item item2">Item 2 (grow: 2)</div>
+        <div class="item item3">Item 3 (grow: 1)</div>
+    </div>
+
+</body>
+</html>
